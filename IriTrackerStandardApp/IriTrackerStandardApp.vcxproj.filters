@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>qrc;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Translation Files">
+      <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
+      <Extensions>ts</Extensions>
+    </Filter>
+    <Filter Include="model">
+      <UniqueIdentifier>{90c43ce9-bc60-4a60-a8bb-469b59680566}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="view">
+      <UniqueIdentifier>{3345a363-ffd5-46cb-834e-4cb5b3bd070a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="controller">
+      <UniqueIdentifier>{b2f084eb-fb4a-461a-b04d-f4d1cae94757}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="model\header">
+      <UniqueIdentifier>{b94e3d22-8ff5-4fee-9d11-b2c578781300}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="model\source">
+      <UniqueIdentifier>{d62a8819-2558-4df9-bc5c-5d0c00ea9e22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="controller\header">
+      <UniqueIdentifier>{d5b46e25-da37-49a9-8c19-282c5241b846}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="controller\source">
+      <UniqueIdentifier>{16ff4e0e-79d7-45fd-bd45-d07e598612c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="view\form">
+      <UniqueIdentifier>{3ceb7c62-db78-4918-90d0-b084d64b9bc3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="view\header">
+      <UniqueIdentifier>{8d54ffb2-a09b-49ce-9816-d5d6d6407be7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="view\source">
+      <UniqueIdentifier>{208259c1-a9cb-4274-8e88-b579884583bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="database">
+      <UniqueIdentifier>{da5f0847-d9e7-4296-9662-17f5ac55402d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="IriTrackerStandardApp.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DataHandler.cpp">
+      <Filter>database</Filter>
+    </ClCompile>
+    <ClCompile Include="Department.cpp">
+      <Filter>model\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Employee.cpp">
+      <Filter>model\source</Filter>
+    </ClCompile>
+    <ClCompile Include="AdminController.cpp">
+      <Filter>controller\source</Filter>
+    </ClCompile>
+    <ClCompile Include="DepartmentController.cpp">
+      <Filter>controller\source</Filter>
+    </ClCompile>
+    <ClCompile Include="EmployeeController.cpp">
+      <Filter>controller\source</Filter>
+    </ClCompile>
+    <ClCompile Include="AdminLoginForm.cpp">
+      <Filter>view\source</Filter>
+    </ClCompile>
+    <ClCompile Include="AdminSignUpForm.cpp">
+      <Filter>view\source</Filter>
+    </ClCompile>
+    <ClCompile Include="DepartmentManagement.cpp">
+      <Filter>view\source</Filter>
+    </ClCompile>
+    <ClCompile Include="DepartmentForm.cpp">
+      <Filter>view\source</Filter>
+    </ClCompile>
+    <ClCompile Include="EmployeeManagement.cpp">
+      <Filter>view\source</Filter>
+    </ClCompile>
+    <ClCompile Include="IriTrackerStandardApp.cpp">
+      <Filter>view\source</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Menu.cpp">
+      <Filter>view\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Navbar.cpp">
+      <Filter>view\source</Filter>
+    </ClCompile>
+    <ClCompile Include="AnonymousHome.cpp">
+      <Filter>view\source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="DataHandler.h">
+      <Filter>database</Filter>
+    </QtMoc>
+    <QtMoc Include="AdminController.h">
+      <Filter>controller\header</Filter>
+    </QtMoc>
+    <QtMoc Include="AdminLoginForm.h">
+      <Filter>view\header</Filter>
+    </QtMoc>
+    <QtMoc Include="AdminSignUpForm.h">
+      <Filter>view\header</Filter>
+    </QtMoc>
+    <QtMoc Include="DepartmentManagement.h">
+      <Filter>view\header</Filter>
+    </QtMoc>
+    <QtMoc Include="DepartmentForm.h">
+      <Filter>view\header</Filter>
+    </QtMoc>
+    <QtMoc Include="EmployeeManagement.h">
+      <Filter>view\header</Filter>
+    </QtMoc>
+    <QtMoc Include="IriTrackerStandardApp.h">
+      <Filter>view\header</Filter>
+    </QtMoc>
+    <QtMoc Include="Menu.h">
+      <Filter>view\header</Filter>
+    </QtMoc>
+    <QtMoc Include="Navbar.h">
+      <Filter>view\header</Filter>
+    </QtMoc>
+    <QtMoc Include="AnonymousHome.h">
+      <Filter>view\header</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Department.h">
+      <Filter>model\header</Filter>
+    </ClInclude>
+    <ClInclude Include="Employee.h">
+      <Filter>model\header</Filter>
+    </ClInclude>
+    <ClInclude Include="DepartmentController.h">
+      <Filter>controller\header</Filter>
+    </ClInclude>
+    <ClInclude Include="EmployeeController.h">
+      <Filter>controller\header</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="AdminLoginForm.ui">
+      <Filter>view\form</Filter>
+    </QtUic>
+    <QtUic Include="AdminSignUpForm.ui">
+      <Filter>view\form</Filter>
+    </QtUic>
+    <QtUic Include="DepartmentManagement.ui">
+      <Filter>view\form</Filter>
+    </QtUic>
+    <QtUic Include="DepartmentForm.ui">
+      <Filter>view\form</Filter>
+    </QtUic>
+    <QtUic Include="EmployeeManagement.ui">
+      <Filter>view\form</Filter>
+    </QtUic>
+    <QtUic Include="Menu.ui">
+      <Filter>view\form</Filter>
+    </QtUic>
+    <QtUic Include="Navbar.ui">
+      <Filter>view\form</Filter>
+    </QtUic>
+    <QtUic Include="AnonymousHome.ui">
+      <Filter>view\form</Filter>
+    </QtUic>
+    <QtUic Include="IriTrackerStandardApp.ui">
+      <Filter>view\form</Filter>
+    </QtUic>
+  </ItemGroup>
+</Project>

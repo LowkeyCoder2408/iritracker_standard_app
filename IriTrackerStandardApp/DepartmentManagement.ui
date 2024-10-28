@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DepartmentManagementClass</class>
+ <widget class="QWidget" name="DepartmentManagementClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>681</width>
+    <height>381</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>DepartmentManagement</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">height: fit-content;</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>0</y>
+     <width>641</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+					background-color: transparent;
+					color: #f53e2d;
+					font-size: 28px;
+					qproperty-alignment: AlignCenter;
+				</string>
+   </property>
+   <property name="text">
+    <string>Các Phòng Ban</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>60</y>
+     <width>641</width>
+     <height>321</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTableView" name="dataTable">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="addButton">
+        <property name="styleSheet">
+         <string notr="true">
+										QPushButton {
+										height: 30px;
+										width: 90px;
+										color: #ffffff;
+										background-color: #2681c9;
+										border-radius: 5px;
+										border: 2px solid #99c6e9;
+										cursor: pointer;
+										}
+
+										QPushButton::hover {
+										background-color: #4a9fd1;
+										}
+									</string>
+        </property>
+        <property name="text">
+         <string> Thêm</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../../Images/add.png</normaloff>../../Images/add.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>13</width>
+          <height>13</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="editButton">
+        <property name="styleSheet">
+         <string notr="true">
+										QPushButton {
+										height: 30px;
+										width: 90px;
+										color: #ffffff;
+										background-color: #2681c9;
+										border-radius: 5px;
+										border: 2px solid #99c6e9;
+										cursor: pointer;
+										}
+
+										QPushButton::hover {
+										background-color: #4a9fd1;
+										}
+									</string>
+        </property>
+        <property name="text">
+         <string> Sửa</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../../Images/edit.png</normaloff>../../Images/edit.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>13</width>
+          <height>13</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="deleteButton">
+        <property name="styleSheet">
+         <string notr="true">
+										QPushButton {
+										height: 30px;
+										width: 90px;
+										color: #ffffff;
+										background-color: #2681c9;
+										border-radius: 5px;
+										border: 2px solid #99c6e9;
+										cursor: pointer;
+										}
+
+										QPushButton::hover {
+										background-color: #4a9fd1;
+										}
+									</string>
+        </property>
+        <property name="text">
+         <string> Xoá</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../../Images/close.png</normaloff>../../Images/close.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>13</width>
+          <height>13</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

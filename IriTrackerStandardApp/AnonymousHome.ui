@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui version="4.0">
+	<class>AnonymousHomeClass</class>
+	<widget class="QWidget" name="AnonymousHomeClass">
+		<property name="geometry">
+			<rect>
+				<x>0</x>
+				<y>0</y>
+				<width>684</width>
+				<height>399</height>
+			</rect>
+		</property>
+		<property name="windowTitle">
+			<string>AnonymousHome</string>
+		</property>
+		<widget class="QLabel" name="timeLabel">
+			<property name="geometry">
+				<rect>
+					<x>180</x>
+					<y>0</y>
+					<width>511</width>
+					<height>81</height>
+				</rect>
+			</property>
+			<property name="styleSheet">
+				<string notr="true">
+					QLabel {
+					background-color: transparent;
+					font-size: 78px;
+					color: rgb(54, 136, 243);
+					qproperty-alignment: AlignCenter;
+					}
+				</string>
+			</property>
+			<property name="text">
+				<string/>
+			</property>
+		</widget>
+		<widget class="QLabel" name="dateLabel">
+			<property name="geometry">
+				<rect>
+					<x>180</x>
+					<y>80</y>
+					<width>511</width>
+					<height>51</height>
+				</rect>
+			</property>
+			<property name="styleSheet">
+				<string notr="true">
+					QLabel {
+					background-color: transparent;
+					font-size: 28px;
+					color: rgb(54, 136, 243);
+					qproperty-alignment: AlignCenter;
+					}
+				</string>
+			</property>
+			<property name="text">
+				<string/>
+			</property>
+		</widget>
+	</widget>
+	<resources/>
+	<connections/>
+</ui>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui version="4.0">
+	<class>DepartmentFormClass</class>
+	<widget class="QDialog" name="DepartmentFormClass">
+		<property name="geometry">
+			<rect>
+				<x>0</x>
+				<y>0</y>
+				<width>522</width>
+				<height>418</height>
+			</rect>
+		</property>
+		<property name="windowTitle">
+			<string>DepartmentForm</string>
+		</property>
+		<widget class="QWidget" name="formLayoutWidget">
+			<property name="geometry">
+				<rect>
+					<x>10</x>
+					<y>10</y>
+					<width>501</width>
+					<height>395</height>
+				</rect>
+			</property>
+			<layout class="QFormLayout" name="formLayout">
+				<item row="0" column="0">
+					<layout class="QVBoxLayout" name="verticalLayout"/>
+				</item>
+				<item row="1" column="0">
+					<widget class="QLabel" name="label2">
+						<property name="font">
+							<font>
+								<pointsize>9</pointsize>
+							</font>
+						</property>
+						<property name="styleSheet">
+							<string notr="true">background-color: transparent;</string>
+						</property>
+						<property name="text">
+							<string>Tên (*)</string>
+						</property>
+					</widget>
+				</item>
+				<item row="1" column="1">
+					<widget class="QLineEdit" name="nameInput">
+						<property name="font">
+							<font>
+								<pointsize>9</pointsize>
+								<strikeout>false</strikeout>
+							</font>
+						</property>
+						<property name="styleSheet">
+							<string notr="true">
+								height: 30px;
+								background-color: #fff;
+								border: 1px solid #999;
+							</string>
+						</property>
+					</widget>
+				</item>
+				<item row="2" column="0">
+					<widget class="QLabel" name="label1">
+						<property name="font">
+							<font>
+								<pointsize>9</pointsize>
+							</font>
+						</property>
+						<property name="styleSheet">
+							<string notr="true">background-color: transparent;</string>
+						</property>
+						<property name="text">
+							<string>Mô tả</string>
+						</property>
+					</widget>
+				</item>
+				<item row="2" column="1">
+					<widget class="QLineEdit" name="descriptionInput">
+						<property name="font">
+							<font>
+								<pointsize>9</pointsize>
+								<strikeout>false</strikeout>
+							</font>
+						</property>
+						<property name="styleSheet">
+							<string notr="true">
+								height: 300px;
+								background-color: #fff;
+								border: 1px solid #999;
+							</string>
+						</property>
+					</widget>
+				</item>
+				<item row="3" column="1">
+					<layout class="QHBoxLayout" name="horizontalLayout_2">
+						<item>
+							<spacer name="horizontalSpacer">
+								<property name="orientation">
+									<enum>Qt::Horizontal</enum>
+								</property>
+								<property name="sizeHint" stdset="0">
+									<size>
+										<width>40</width>
+										<height>20</height>
+									</size>
+								</property>
+							</spacer>
+						</item>
+						<item>
+							<widget class="QPushButton" name="submitButton">
+								<property name="font">
+									<font/>
+								</property>
+								<property name="styleSheet">
+									<string notr="true">
+										QPushButton {
+										height: 30px;
+										width: 90px;
+										color: #ffffff;
+										background-color: #2681c9;
+										border-radius: 5px;
+										border: 2px solid #99c6e9;
+										cursor: pointer;
+										}
+
+										QPushButton::hover {
+										background-color: #4a9fd1;
+										}
+									</string>
+								</property>
+								<property name="text">
+									<string> Đồng ý</string>
+								</property>
+								<property name="icon">
+									<iconset>
+										<normaloff>../../Images/checkmark.png</normaloff>../../Images/checkmark.png
+									</iconset>
+								</property>
+							</widget>
+						</item>
+						<item>
+							<widget class="QPushButton" name="cancelButton">
+								<property name="font">
+									<font/>
+								</property>
+								<property name="styleSheet">
+									<string notr="true">
+										QPushButton {
+										height: 30px;
+										width: 90px;
+										color: #ffffff;
+										background-color: #2681c9;
+										border-radius: 5px;
+										border: 2px solid #99c6e9;
+										cursor: pointer;
+										}
+
+										QPushButton::hover {
+										background-color: #4a9fd1;
+										}
+									</string>
+								</property>
+								<property name="text">
+									<string> Hủy bỏ</string>
+								</property>
+								<property name="icon">
+									<iconset>
+										<normaloff>../../Images/close.png</normaloff>../../Images/close.png
+									</iconset>
+								</property>
+								<property name="iconSize">
+									<size>
+										<width>13</width>
+										<height>13</height>
+									</size>
+								</property>
+							</widget>
+						</item>
+					</layout>
+				</item>
+			</layout>
+		</widget>
+	</widget>
+	<layoutdefault spacing="6" margin="11"/>
+	<resources/>
+	<connections/>
+</ui>

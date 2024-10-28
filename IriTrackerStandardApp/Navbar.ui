@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui version="4.0">
+	<class>NavbarClass</class>
+	<widget class="QWidget" name="NavbarClass">
+		<property name="geometry">
+			<rect>
+				<x>0</x>
+				<y>0</y>
+				<width>678</width>
+				<height>447</height>
+			</rect>
+		</property>
+		<property name="windowTitle">
+			<string>Navbar</string>
+		</property>
+		<widget class="QWidget" name="horizontalLayoutWidget">
+			<property name="geometry">
+				<rect>
+					<x>10</x>
+					<y>0</y>
+					<width>601</width>
+					<height>31</height>
+				</rect>
+			</property>
+			<layout class="QHBoxLayout" name="horizontalLayout">
+				<property name="spacing">
+					<number>0</number>
+				</property>
+				<property name="leftMargin">
+					<number>0</number>
+				</property>
+				<property name="topMargin">
+					<number>0</number>
+				</property>
+				<item>
+					<widget class="QToolButton" name="backButton">
+						<property name="styleSheet">
+							<string notr="true">
+								QToolButton {
+								border: none;
+								padding: 3px;
+								}
+
+								QToolButton:hover {
+								background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
+								stop:0 #d3d3d3, stop:0.5 #d3d3d3, stop:1 #ffffff);
+								border-top: 1px solid white;
+								border-right: 1px solid #999;
+								border-bottom: 1px solid #999;
+								border-left: none;
+								}
+
+								QToolButton:pressed {
+								background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
+								stop:0 #ffffff, stop:0.5 #ffffff, stop:1 #d3d3d3);
+								border-bottom: 1px solid white;
+								border-left: 1px solid #999;
+								border-top: 1px solid #999;
+								border-right: none;
+								}
+							</string>
+						</property>
+						<property name="text">
+							<string> Trở Lại</string>
+						</property>
+						<property name="icon">
+							<iconset>
+								<normaloff>../../Images/arrow.png</normaloff>../../Images/arrow.png
+							</iconset>
+						</property>
+						<property name="autoRaise">
+							<bool>false</bool>
+						</property>
+					</widget>
+				</item>
+				<item>
+					<widget class="QToolButton" name="logoutButton">
+						<property name="styleSheet">
+							<string notr="true">
+								QToolButton {
+								border: none;
+								padding: 3px;
+								}
+
+								QToolButton:hover {
+								background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
+								stop:0 #d3d3d3, stop:0.5 #d3d3d3, stop:1 #ffffff);
+								border-top: 1px solid white;
+								border-right: 1px solid #999;
+								border-bottom: 1px solid #999;
+								border-left: none;
+								}
+
+								QToolButton:pressed {
+								background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
+								stop:0 #ffffff, stop:0.5 #ffffff, stop:1 #d3d3d3);
+								border-bottom: 1px solid white;
+								border-left: 1px solid #999;
+								border-top: 1px solid #999;
+								border-right: none;
+								}
+							</string>
+						</property>
+						<property name="text">
+							<string> Đăng Xuất</string>
+						</property>
+						<property name="icon">
+							<iconset>
+								<normaloff>../../Images/user-logout.png</normaloff>../../Images/user-logout.png
+							</iconset>
+						</property>
+						<property name="autoRaise">
+							<bool>false</bool>
+						</property>
+					</widget>
+				</item>
+				<item>
+					<widget class="QToolButton" name="loginButton">
+						<property name="styleSheet">
+							<string notr="true">
+								QToolButton {
+								border: none;
+								padding: 3px;
+								}
+
+								QToolButton:hover {
+								background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
+								stop:0 #d3d3d3, stop:0.5 #d3d3d3, stop:1 #ffffff);
+								border-top: 1px solid white;
+								border-right: 1px solid #999;
+								border-bottom: 1px solid #999;
+								border-left: none;
+								}
+
+								QToolButton:pressed {
+								background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
+								stop:0 #ffffff, stop:0.5 #ffffff, stop:1 #d3d3d3);
+								border-bottom: 1px solid white;
+								border-left: 1px solid #999;
+								border-top: 1px solid #999;
+								border-right: none;
+								}
+							</string>
+						</property>
+						<property name="text">
+							<string> Đăng Nhập</string>
+						</property>
+						<property name="icon">
+							<iconset>
+								<normaloff>../../Images/login_icon.png</normaloff>../../Images/login_icon.png
+							</iconset>
+						</property>
+						<property name="autoRaise">
+							<bool>false</bool>
+						</property>
+					</widget>
+				</item>
+				<item>
+					<widget class="QToolButton" name="copyrightButton">
+						<property name="styleSheet">
+							<string notr="true">
+								QToolButton {
+								border: none;
+								padding: 3px;
+								}
+
+								QToolButton:hover {
+								background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
+								stop:0 #d3d3d3, stop:0.5 #d3d3d3, stop:1 #ffffff);
+								border-top: 1px solid white;
+								border-right: 1px solid #999;
+								border-bottom: 1px solid #999;
+								border-left: none;
+								}
+
+								QToolButton:pressed {
+								background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
+								stop:0 #ffffff, stop:0.5 #ffffff, stop:1 #d3d3d3);
+								border-bottom: 1px solid white;
+								border-left: 1px solid #999;
+								border-top: 1px solid #999;
+								border-right: none;
+								}
+							</string>
+						</property>
+						<property name="text">
+							<string> Bản Quyền Sử Dụng</string>
+						</property>
+						<property name="icon">
+							<iconset>
+								<normaloff>../../Images/license.png</normaloff>../../Images/license.png
+							</iconset>
+						</property>
+					</widget>
+				</item>
+				<item>
+					<widget class="QToolButton" name="modeButton">
+						<property name="styleSheet">
+							<string notr="true">
+								QToolButton {
+								border: none;
+								padding: 3px;
+								}
+
+								QToolButton:hover {
+								background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
+								stop:0 #d3d3d3, stop:0.5 #d3d3d3, stop:1 #ffffff);
+								border-top: 1px solid white;
+								border-right: 1px solid #999;
+								border-bottom: 1px solid #999;
+								border-left: none;
+								}
+
+								QToolButton:pressed {
+								background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
+								stop:0 #ffffff, stop:0.5 #ffffff, stop:1 #d3d3d3);
+								border-bottom: 1px solid white;
+								border-left: 1px solid #999;
+								border-top: 1px solid #999;
+								border-right: none;
+								}
+							</string>
+						</property>
+						<property name="text">
+							<string> Chế Độ</string>
+						</property>
+						<property name="icon">
+							<iconset>
+								<normaloff>../../Images/mode.png</normaloff>../../Images/mode.png
+							</iconset>
+						</property>
+					</widget>
+				</item>
+				<item>
+					<widget class="QToolButton" name="exitButton">
+						<property name="styleSheet">
+							<string notr="true">
+								QToolButton {
+								border: none;
+								padding: 3px;
+								}
+
+								QToolButton:hover {
+								background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
+								stop:0 #d3d3d3, stop:0.5 #d3d3d3, stop:1 #ffffff);
+								border-top: 1px solid white;
+								border-right: 1px solid #999;
+								border-bottom: 1px solid #999;
+								border-left: none;
+								}
+
+								QToolButton:pressed {
+								background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
+								stop:0 #ffffff, stop:0.5 #ffffff, stop:1 #d3d3d3);
+								border-bottom: 1px solid white;
+								border-left: 1px solid #999;
+								border-top: 1px solid #999;
+								border-right: none;
+								}
+							</string>
+						</property>
+						<property name="text">
+							<string> Thoát</string>
+						</property>
+						<property name="icon">
+							<iconset>
+								<normaloff>../../Images/power.png</normaloff>../../Images/power.png
+							</iconset>
+						</property>
+					</widget>
+				</item>
+			</layout>
+		</widget>
+		<widget class="QWidget" name="horizontalLayoutWidget_2">
+			<property name="geometry">
+				<rect>
+					<x>610</x>
+					<y>0</y>
+					<width>60</width>
+					<height>31</height>
+				</rect>
+			</property>
+			<layout class="QHBoxLayout" name="horizontalLayout_2">
+				<property name="spacing">
+					<number>0</number>
+				</property>
+				<item>
+					<widget class="QToolButton" name="toolButton_2">
+						<property name="styleSheet">
+							<string notr="true">
+								QToolButton {
+								border: none;
+								padding: 3px;
+								}
+
+								QToolButton:hover {
+								background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
+								stop:0 #d3d3d3, stop:0.5 #d3d3d3, stop:1 #ffffff);
+								border-top: 1px solid white;
+								border-right: 1px solid #999;
+								border-bottom: 1px solid #999;
+								border-left: none;
+								}
+
+								QToolButton:pressed {
+								background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
+								stop:0 #ffffff, stop:0.5 #ffffff, stop:1 #d3d3d3);
+								border-bottom: 1px solid white;
+								border-left: 1px solid #999;
+								border-top: 1px solid #999;
+								border-right: none;
+								}
+							</string>
+						</property>
+						<property name="text">
+							<string>...</string>
+						</property>
+						<property name="icon">
+							<iconset>
+								<normaloff>../../Images/introduction.png</normaloff>../../Images/introduction.png
+							</iconset>
+						</property>
+					</widget>
+				</item>
+				<item>
+					<widget class="QToolButton" name="toolButton">
+						<property name="styleSheet">
+							<string notr="true">
+								QToolButton {
+								border: none;
+								padding: 3px;
+								}
+
+								QToolButton:hover {
+								background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
+								stop:0 #d3d3d3, stop:0.5 #d3d3d3, stop:1 #ffffff);
+								border-top: 1px solid white;
+								border-right: 1px solid #999;
+								border-bottom: 1px solid #999;
+								border-left: none;
+								}
+
+								QToolButton:pressed {
+								background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
+								stop:0 #ffffff, stop:0.5 #ffffff, stop:1 #d3d3d3);
+								border-bottom: 1px solid white;
+								border-left: 1px solid #999;
+								border-top: 1px solid #999;
+								border-right: none;
+								}
+							</string>
+						</property>
+						<property name="text">
+							<string>...</string>
+						</property>
+						<property name="icon">
+							<iconset>
+								<normaloff>../../Images/question.png</normaloff>../../Images/question.png
+							</iconset>
+						</property>
+					</widget>
+				</item>
+			</layout>
+		</widget>
+	</widget>
+	<layoutdefault spacing="6" margin="11"/>
+	<tabstops>
+		<tabstop>logoutButton</tabstop>
+		<tabstop>copyrightButton</tabstop>
+		<tabstop>modeButton</tabstop>
+		<tabstop>exitButton</tabstop>
+	</tabstops>
+	<resources/>
+	<connections/>
+</ui>

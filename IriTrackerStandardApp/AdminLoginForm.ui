@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui version="4.0">
+	<class>AdminLoginFormClass</class>
+	<widget class="QDialog" name="AdminLoginFormClass">
+		<property name="geometry">
+			<rect>
+				<x>0</x>
+				<y>0</y>
+				<width>429</width>
+				<height>91</height>
+			</rect>
+		</property>
+		<property name="windowTitle">
+			<string>Đăng Nhập</string>
+		</property>
+		<property name="windowIcon">
+			<iconset>
+				<normaloff>../../Images/IriTracker_logo.png</normaloff>../../Images/IriTracker_logo.png
+			</iconset>
+		</property>
+		<property name="styleSheet">
+			<string notr="true">
+				QDialog {
+				background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:1 #a4bedf);
+				}
+			</string>
+		</property>
+		<widget class="QLabel" name="label">
+			<property name="geometry">
+				<rect>
+					<x>21</x>
+					<y>10</y>
+					<width>71</width>
+					<height>31</height>
+				</rect>
+			</property>
+			<property name="font">
+				<font>
+					<pointsize>9</pointsize>
+				</font>
+			</property>
+			<property name="text">
+				<string>Mật khẩu</string>
+			</property>
+		</widget>
+		<widget class="QLineEdit" name="passwordInput">
+			<property name="geometry">
+				<rect>
+					<x>91</x>
+					<y>10</y>
+					<width>321</width>
+					<height>31</height>
+				</rect>
+			</property>
+			<property name="styleSheet">
+				<string notr="true">
+					QLineEdit {
+					height: 30px;
+					border-radius: 0;
+					border: 1px solid #999;
+					}
+				</string>
+			</property>
+		</widget>
+		<widget class="QPushButton" name="cancelButton">
+			<property name="geometry">
+				<rect>
+					<x>320</x>
+					<y>50</y>
+					<width>91</width>
+					<height>31</height>
+				</rect>
+			</property>
+			<property name="font">
+				<font>
+					<pointsize>9</pointsize>
+				</font>
+			</property>
+			<property name="styleSheet">
+				<string notr="true">
+					QPushButton {
+					height: 35px;
+					padding-left: 10px;
+					padding-right: 10px;
+					color: #ffffff;
+					background-color: #2681c9;
+					border-radius: 5px;
+					border: 2px solid #99c6e9;
+					cursor: pointer;
+					}
+
+					QPushButton::hover {
+					background-color: #4a9fd1;
+					}
+				</string>
+			</property>
+			<property name="text">
+				<string> Hủy bỏ</string>
+			</property>
+			<property name="icon">
+				<iconset>
+					<normaloff>../../Images/close.png</normaloff>../../Images/close.png
+				</iconset>
+			</property>
+			<property name="iconSize">
+				<size>
+					<width>13</width>
+					<height>13</height>
+				</size>
+			</property>
+		</widget>
+		<widget class="QPushButton" name="loginButton">
+			<property name="geometry">
+				<rect>
+					<x>210</x>
+					<y>50</y>
+					<width>101</width>
+					<height>31</height>
+				</rect>
+			</property>
+			<property name="font">
+				<font>
+					<pointsize>9</pointsize>
+				</font>
+			</property>
+			<property name="styleSheet">
+				<string notr="true">
+					QPushButton {
+					height: 35px;
+					padding-left: 10px;
+					padding-right: 10px;
+					color: #ffffff;
+					background-color: #2681c9;
+					border-radius: 5px;
+					border: 2px solid #99c6e9;
+					cursor: pointer;
+					}
+
+					QPushButton::hover {
+					background-color: #4a9fd1;
+					}
+				</string>
+			</property>
+			<property name="text">
+				<string> Đồng ý</string>
+			</property>
+			<property name="icon">
+				<iconset>
+					<normaloff>../../Images/checkmark.png</normaloff>../../Images/checkmark.png
+				</iconset>
+			</property>
+		</widget>
+		<widget class="QPushButton" name="forgotPasswordButton">
+			<property name="geometry">
+				<rect>
+					<x>51</x>
+					<y>50</y>
+					<width>151</width>
+					<height>31</height>
+				</rect>
+			</property>
+			<property name="font">
+				<font>
+					<pointsize>9</pointsize>
+				</font>
+			</property>
+			<property name="styleSheet">
+				<string notr="true">
+					QPushButton {
+					height: 35px;
+					padding-left: 10px;
+					padding-right: 10px;
+					color: #ffffff;
+					background-color: #2681c9;
+					border-radius: 5px;
+					border: 2px solid #99c6e9;
+					cursor: pointer;
+					}
+
+					QPushButton::hover {
+					background-color: #4a9fd1;
+					}
+				</string>
+			</property>
+			<property name="text">
+				<string>Quên mật khẩu</string>
+			</property>
+			<property name="icon">
+				<iconset>
+					<normaloff>../../Images/forgot_password.png</normaloff>../../Images/forgot_password.png
+				</iconset>
+			</property>
+		</widget>
+	</widget>
+	<resources/>
+	<connections/>
+</ui>

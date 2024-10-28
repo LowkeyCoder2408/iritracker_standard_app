@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui version="4.0">
+	<class>IriTrackerStandardAppClass</class>
+	<widget class="QMainWindow" name="IriTrackerStandardAppClass">
+		<property name="geometry">
+			<rect>
+				<x>0</x>
+				<y>0</y>
+				<width>687</width>
+				<height>438</height>
+			</rect>
+		</property>
+		<property name="windowTitle">
+			<string>IriTrackerStandardApp</string>
+		</property>
+		<widget class="QWidget" name="centralWidget">
+			<widget class="QWidget" name="content" native="true">
+				<property name="geometry">
+					<rect>
+						<x>-10</x>
+						<y>30</y>
+						<width>701</width>
+						<height>401</height>
+					</rect>
+				</property>
+				<property name="styleSheet">
+					<string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:1 #a4bedf);</string>
+				</property>
+			</widget>
+			<widget class="QWidget" name="header" native="true">
+				<property name="geometry">
+					<rect>
+						<x>0</x>
+						<y>0</y>
+						<width>10000</width>
+						<height>30</height>
+					</rect>
+				</property>
+				<property name="font">
+					<font>
+						<kerning>false</kerning>
+					</font>
+				</property>
+				<property name="toolTipDuration">
+					<number>0</number>
+				</property>
+				<property name="styleSheet">
+					<string notr="true">background-color: #eaeaea;</string>
+				</property>
+			</widget>
+		</widget>
+	</widget>
+	<layoutdefault spacing="6" margin="11"/>
+	<resources>
+		<include location="IriTrackerStandardApp.qrc"/>
+	</resources>
+	<connections/>
+</ui>
