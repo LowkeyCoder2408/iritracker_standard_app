@@ -95,6 +95,12 @@
     <ClCompile Include="AnonymousHome.cpp">
       <Filter>view\source</Filter>
     </ClCompile>
+    <ClCompile Include="DatabaseSetting.cpp">
+      <Filter>view\source</Filter>
+    </ClCompile>
+    <ClCompile Include="DatabaseSettingToSQLite.cpp">
+      <Filter>view\source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="DataHandler.h">
@@ -128,6 +134,12 @@
       <Filter>view\header</Filter>
     </QtMoc>
     <QtMoc Include="AnonymousHome.h">
+      <Filter>view\header</Filter>
+    </QtMoc>
+    <QtMoc Include="DatabaseSetting.h">
+      <Filter>view\header</Filter>
+    </QtMoc>
+    <QtMoc Include="DatabaseSettingToSQLite.h">
       <Filter>view\header</Filter>
     </QtMoc>
   </ItemGroup>
@@ -171,6 +183,12 @@
       <Filter>view\form</Filter>
     </QtUic>
     <QtUic Include="IriTrackerStandardApp.ui">
+      <Filter>view\form</Filter>
+    </QtUic>
+    <QtUic Include="DatabaseSettingToSQLite.ui">
+      <Filter>view\form</Filter>
+    </QtUic>
+    <QtUic Include="DatabaseSetting.ui">
       <Filter>view\form</Filter>
     </QtUic>
   </ItemGroup>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DatabaseSettingToSQLiteClass</class>
+ <widget class="QWidget" name="DatabaseSettingToSQLiteClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>581</width>
+    <height>99</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>251</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>MS Shell Dlg 2</family>
+     <pointsize>9</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+						QLabel {
+						font: 9pt;
+						text-align: left;
+						}
+					</string>
+   </property>
+   <property name="text">
+    <string>Thay đổi hoặc tạo cơ sở dữ liệu mới</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="databaseFilePathEdit">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>50</y>
+     <width>341</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="submitButton_2">
+   <property name="geometry">
+    <rect>
+     <x>493</x>
+     <y>50</y>
+     <width>71</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+										QPushButton {
+										height: 30px;
+										width: 90px;
+										color: #ffffff;
+										background-color: #2681c9;
+										border-radius: 5px;
+										border: 2px solid #99c6e9;
+										cursor: pointer;
+										}
+
+										QPushButton::hover {
+										background-color: #4a9fd1;
+										}
+									</string>
+   </property>
+   <property name="text">
+    <string>Duyệt</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>50</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>MS Shell Dlg 2</family>
+     <pointsize>9</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+						QLabel {
+						font: 9pt;
+						text-align: left;
+						}
+					</string>
+   </property>
+   <property name="text">
+    <string>Tệp cơ sở dữ liệu</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

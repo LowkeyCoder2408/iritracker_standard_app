@@ -102,6 +102,8 @@
     <ClCompile Include="AdminLoginForm.cpp" />
     <ClCompile Include="AdminSignUpForm.cpp" />
     <ClCompile Include="AnonymousHome.cpp" />
+    <ClCompile Include="DatabaseSetting.cpp" />
+    <ClCompile Include="DatabaseSettingToSQLite.cpp" />
     <ClCompile Include="DataHandler.cpp" />
     <ClCompile Include="Department.cpp" />
     <ClCompile Include="DepartmentController.cpp" />
@@ -123,6 +125,8 @@
     <QtMoc Include="AdminLoginForm.h" />
     <QtMoc Include="AdminSignUpForm.h" />
     <QtMoc Include="AnonymousHome.h" />
+    <QtMoc Include="DatabaseSetting.h" />
+    <QtMoc Include="DatabaseSettingToSQLite.h" />
     <ClInclude Include="DepartmentController.h" />
     <QtMoc Include="DepartmentManagement.h" />
     <QtMoc Include="DepartmentForm.h" />
@@ -135,6 +139,8 @@
     <QtUic Include="AdminLoginForm.ui" />
     <QtUic Include="AdminSignUpForm.ui" />
     <QtUic Include="AnonymousHome.ui" />
+    <QtUic Include="DatabaseSetting.ui" />
+    <QtUic Include="DatabaseSettingToSQLite.ui" />
     <QtUic Include="DepartmentForm.ui" />
     <QtUic Include="DepartmentManagement.ui" />
     <QtUic Include="EmployeeManagement.ui" />

@@ -2,16 +2,8 @@
 #include "IriTrackerStandardApp.h"
 #include <QHBoxLayout>
 
-IriTrackerStandardApp::IriTrackerStandardApp(QWidget* parent)
-    : QMainWindow(parent),
-    navbar(),                  // Đối tượng trực tiếp
-    anonymousHome(),           // Đối tượng trực tiếp
-    menu(),                    // Đối tượng trực tiếp
-    departmentManagement(),     // Đối tượng trực tiếp
-    employeeManagement() {      // Đối tượng trực tiếp
-
+IriTrackerStandardApp::IriTrackerStandardApp(QWidget* parent) : QMainWindow(parent), navbar(), anonymousHome(), menu(), departmentManagement(), employeeManagement() {
     ui.setupUi(this);
-
     QHBoxLayout* headerLayout = new QHBoxLayout();
     headerLayout->setContentsMargins(0, 0, 0, 0);
     headerLayout->setSpacing(0);
@@ -61,8 +53,8 @@ void IriTrackerStandardApp::showMenu() {
     hideDepartmentManagement();
     hideEmployeeManagement();
     anonymousHome.hide();
-    ui.content->layout()->addWidget(&menu);  // Sử dụng tham chiếu đến đối tượng
-    menu.show(); // Không cần dùng *
+    ui.content->layout()->addWidget(&menu);
+    menu.show();
 }
 
 void IriTrackerStandardApp::hideMenu() {

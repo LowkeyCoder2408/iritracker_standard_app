@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DatabaseSettingClass</class>
+ <widget class="QDialog" name="DatabaseSettingClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>590</width>
+    <height>183</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>9</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Thiết Lập Cơ Sở Dữ Liệu</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../Images/IriTracker_logo.png</normaloff>../../Images/IriTracker_logo.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog {
+	background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:1 #a4bedf);
+}</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>0</y>
+     <width>551</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>MS Shell Dlg 2</family>
+     <pointsize>9</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+						QLabel {
+						font: 9pt;
+						text-align: left;
+						}
+					</string>
+   </property>
+   <property name="text">
+    <string>Chọn 1 loại cơ sở dữ liệu. Nếu có quá nhiều nhân viên, thì MySQL là sự lựa chọn tốt nhất.</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>50</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>MS Shell Dlg 2</family>
+     <pointsize>9</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+						QLabel {
+						font: 9pt;
+						text-align: left;
+						}
+					</string>
+   </property>
+   <property name="text">
+    <string>Loại cơ sở dữ liệu</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="databaseTypeComboBox">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>50</y>
+     <width>421</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="placeholderText">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="cancelButton">
+   <property name="geometry">
+    <rect>
+     <x>477</x>
+     <y>140</y>
+     <width>94</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+										QPushButton {
+										height: 30px;
+										width: 90px;
+										color: #ffffff;
+										background-color: #2681c9;
+										border-radius: 5px;
+										border: 2px solid #99c6e9;
+										cursor: pointer;
+										}
+
+										QPushButton::hover {
+										background-color: #4a9fd1;
+										}
+									</string>
+   </property>
+   <property name="text">
+    <string> Hủy bỏ</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../Images/close.png</normaloff>../../Images/close.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>13</width>
+     <height>13</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="submitButton">
+   <property name="geometry">
+    <rect>
+     <x>376</x>
+     <y>140</y>
+     <width>94</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+										QPushButton {
+										height: 30px;
+										width: 90px;
+										color: #ffffff;
+										background-color: #2681c9;
+										border-radius: 5px;
+										border: 2px solid #99c6e9;
+										cursor: pointer;
+										}
+
+										QPushButton::hover {
+										background-color: #4a9fd1;
+										}
+									</string>
+   </property>
+   <property name="text">
+    <string> Đồng ý</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../Images/checkmark.png</normaloff>../../Images/checkmark.png</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="testConnectionButton">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>140</y>
+     <width>181</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+										QPushButton {
+										height: 30px;
+										width: 90px;
+										color: #ffffff;
+										background-color: #2681c9;
+										border-radius: 5px;
+										border: 2px solid #99c6e9;
+										cursor: pointer;
+										}
+
+										QPushButton::hover {
+										background-color: #4a9fd1;
+										}
+									</string>
+   </property>
+   <property name="text">
+    <string> Kết nối thử nghiệm</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../Images/database_connection.png</normaloff>../../Images/database_connection.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>89</y>
+     <width>571</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QGroupBox {
+    border: 2px solid white;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    padding-top: 7px;
+	padding-left: 7px; 
+    background-color: transparent;
+}</string>
+   </property>
+   <property name="title">
+    <string>Chi tiết kết nối</string>
+   </property>
+   <property name="flat">
+    <bool>false</bool>
+   </property>
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>-1</x>
+      <y>19</y>
+      <width>571</width>
+      <height>16</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -40,6 +40,99 @@ bool DataHandler::connectToDatabase() {
     return true;
 }
 
+bool DataHandler::connectToSQLiteDatabase(const QString& databasePath) {
+    QFile databaseFile(databasePath);
+    bool isDatabaseExist = databaseFile.exists();
+
+    // Thêm cơ sở dữ liệu
+    QSqlDatabase sqlDatabase = QSqlDatabase::addDatabase("QSQLITE");
+    sqlDatabase.setDatabaseName(databasePath);
+
+    if (!sqlDatabase.open()) {
+        qDebug() << "Lỗi khi kết nối đến cơ sở dữ liệu:" << sqlDatabase.lastError().text();
+        return false;
+    }
+
+    // Kiểm tra xem cơ sở dữ liệu có tồn tại và không trống
+    if (!isDatabaseExist || isDatabaseEmpty(databasePath)) {
+        qDebug() << "Cơ sở dữ liệu không tồn tại hoặc trống. Tạo bảng mới...";
+        runCreateQuery("CREATE TABLE IF NOT EXISTS department ("
+            "name TEXT, "
+            "description TEXT"
+            ");");
+        runCreateQuery("CREATE TABLE IF NOT EXISTS employee ("
+            "id TEXT PRIMARY KEY, "
+            "first_name TEXT, "
+            "last_name TEXT, "
+            "date_of_birth TEXT, "
+            "email TEXT UNIQUE, "
+            "phone_number TEXT, "
+            "address TEXT, "
+            "department TEXT, "
+            "role TEXT, "
+            "start_date_of_work TEXT, "
+            "password TEXT, "
+            "avatar TEXT, "
+            "is_enabled BOOLEAN NOT NULL DEFAULT 1, "
+            "FOREIGN KEY(department) REFERENCES department(name)"
+            ");");
+    }
+    else {
+        // Kiểm tra xem bảng có tồn tại không
+        if (!areTablesExist()) {
+            qDebug() << "Các bảng không tồn tại. Tạo bảng mới...";
+            runCreateQuery("CREATE TABLE IF NOT EXISTS department ("
+                "name TEXT, "
+                "description TEXT"
+                ");");
+            runCreateQuery("CREATE TABLE IF NOT EXISTS employee ("
+                "id TEXT PRIMARY KEY, "
+                "first_name TEXT, "
+                "last_name TEXT, "
+                "date_of_birth TEXT, "
+                "email TEXT UNIQUE, "
+                "phone_number TEXT, "
+                "address TEXT, "
+                "department TEXT, "
+                "role TEXT, "
+                "start_date_of_work TEXT, "
+                "password TEXT, "
+                "avatar TEXT, "
+                "is_enabled BOOLEAN NOT NULL DEFAULT 1, "
+                "FOREIGN KEY(department) REFERENCES department(name)"
+                ");");
+        }
+    }
+
+    qDebug() << "Kết nối đến cơ sở dữ liệu thành công";
+    return true;
+}
+
+// Kiểm tra xem tệp cơ sở dữ liệu có trống không
+bool DataHandler::isDatabaseEmpty(const QString& databasePath) {
+    QFile databaseFile(databasePath);
+    if (!databaseFile.open(QIODevice::ReadOnly)) {
+        qDebug() << "Không thể mở cơ sở dữ liệu để kiểm tra tính trống:" << databaseFile.errorString();
+        return true; // Xem như trống nếu không thể mở
+    }
+
+    // Đọc dữ liệu từ tệp và kiểm tra kích thước
+    return (databaseFile.size() == 0);
+}
+
+// Kiểm tra xem các bảng cần thiết có tồn tại không
+bool DataHandler::areTablesExist() {
+    QSqlQuery query;
+    query.exec("SELECT name FROM sqlite_master WHERE type='table' AND name IN ('department', 'employee');");
+
+    int count = 0;
+    while (query.next()) {
+        count++;
+    }
+
+    return (count == 2); // Nếu có cả hai bảng
+}
+
 void DataHandler::disconnectToDatabase() {
     if (database.isOpen()) {
         database.close();

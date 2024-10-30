@@ -16,6 +16,9 @@ class DataHandler : public QObject {
 public:
     explicit DataHandler(QObject* parent = nullptr);
     bool connectToDatabase();
+    bool connectToSQLiteDatabase(const QString& databasePath);
+    bool isDatabaseEmpty(const QString& databasePath);
+    bool areTablesExist();
     void disconnectToDatabase();
     bool checkUserCredentials(QString password);
     bool hasAdminAccount();
