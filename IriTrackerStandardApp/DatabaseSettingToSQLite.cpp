@@ -13,4 +13,8 @@ void DatabaseSettingToSQLite::browseDatabaseFile() {
     }
 }
 
+QString DatabaseSettingToSQLite::getDatabasePath() {
+    return ui.databasePathInput->text();
+}
+
 DatabaseSettingToSQLite::~DatabaseSettingToSQLite() {}

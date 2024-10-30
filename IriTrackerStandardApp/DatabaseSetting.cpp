@@ -1,6 +1,9 @@
 ﻿#pragma execution_character_set("utf-8") 
 #include "DatabaseSetting.h"
 #include "ui_DatabaseSetting.h"
+#include "AdminSignUpForm.h"
+#include "IriTrackerStandardApp.h"
+#include <QSettings>
 
 DatabaseSetting::DatabaseSetting(QWidget* parent) : QMainWindow(parent),
 selectedDatabaseType(0),
@@ -56,16 +59,64 @@ void DatabaseSetting::hideMySQL() {
 
 
 void DatabaseSetting::handleConnect() {
+    QSettings settings("Iritech", "IriTracker_Standard");
     if (selectedDatabaseType == 0) {
-        //emit connectToSQLite();
+        settings.setValue("databaseType", "SQLite");
+        settings.setValue("databasePath", databaseSettingToSQLite.getDatabasePath());
+        settings.setValue("isLoggedIn", false);
+
+        if (dataHandler.connectToSQLiteDatabase()) {
+            if (!dataHandler.hasAdminAccount()) {
+                AdminSignUpForm* adminSignUpForm = new AdminSignUpForm();
+                adminSignUpForm->show();
+            }
+            else {
+                IriTrackerStandardApp* iriTrackerStandardApp = new IriTrackerStandardApp();
+                iriTrackerStandardApp->show();
+            }
+            this->close();
+        }
+        else {
+            qDebug() << "Không thể kết nối đến cơ sở dữ liệu SQLite.";
+        }
     }
     else if (selectedDatabaseType == 1) {
-        //emit connectToMySQL();
+        settings.setValue("databaseType", "MySQL");
+
+        QString host = ui.hostLineEdit->text();
+        QString databaseName = ui.databaseNameLineEdit->text();
+        QString user = ui.usernameLineEdit->text();
+        QString password = ui.passwordLineEdit->text();
+        QString port = ui.portLineEdit->text(); // Giả sử bạn đã thêm một trường nhập liệu cho cổng
+
+        // Ghi các thông tin kết nối MySQL vào QSettings
+        settings.setValue("host", host);
+        settings.setValue("databaseName", databaseName);
+        settings.setValue("username", user);
+        settings.setValue("password", password);
+        settings.setValue("port", port);
+        settings.setValue("databasePath", "");
+
+        if (dataHandler.connectToMySQLDatabase()) {
+            if (!dataHandler.hasAdminAccount()) {
+                AdminSignUpForm* adminSignUpForm = new AdminSignUpForm();
+                adminSignUpForm->show();
+            }
+            else {
+                IriTrackerStandardApp* iriTrackerStandardApp = new IriTrackerStandardApp();
+                iriTrackerStandardApp->show();
+            }
+            this->close();
+        }
+        else {
+            qDebug() << "Không thể kết nối đến cơ sở dữ liệu MySQL.";
+        }
     }
     else {
         qDebug() << "Loại cơ sở dữ liệu không hợp lệ:" << selectedDatabaseType;
     }
 }
+
 
 void DatabaseSetting::handleCancel() {
     this->close();

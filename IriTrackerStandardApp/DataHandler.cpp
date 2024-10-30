@@ -1,50 +1,21 @@
 ﻿#include "DataHandler.h"
 #include <QFile>
+#include <QSettings>
 
 DataHandler::DataHandler(QObject* parent) : QObject(parent) {}
 
-bool DataHandler::connectToDatabase() {
-    QString databaseDirectory = "IriTrackerStandardAppDatabase.db";
-    QFile databaseFile(databaseDirectory);
-    bool isDatabaseExist = databaseFile.exists();
-    QSqlDatabase sqlDatabase = QSqlDatabase::addDatabase("QSQLITE");
-    sqlDatabase.setDatabaseName(databaseDirectory);
+bool DataHandler::connectToSQLiteDatabase() {
+    QSettings settings("Iritech", "IriTracker_Standard");
+    QString databasePath = settings.value("databasePath", "").toString();
 
-    if (!sqlDatabase.open()) {
-        qDebug() << "Lỗi khi kết nối đến cơ sở dữ liệu:" << sqlDatabase.lastError().text();
+    // Kiểm tra nếu file cơ sở dữ liệu không tồn tại, thoát và trả về false
+    QFile databaseFile(databasePath);
+    if (!databaseFile.exists()) {
+        qDebug() << "Tệp cơ sở dữ liệu không tồn tại:" << databasePath;
         return false;
     }
-    if (!isDatabaseExist) {
-        runCreateQuery("CREATE TABLE department ("
-            "name TEXT, "
-            "description TEXT"
-            ");");
-        runCreateQuery("CREATE TABLE employee ("
-            "id TEXT PRIMARY KEY, "
-            "first_name TEXT, "
-            "last_name TEXT, "
-            "date_of_birth TEXT, "
-            "email TEXT UNIQUE, "
-            "phone_number TEXT, "
-            "address TEXT, "
-            "department TEXT, "
-            "role TEXT, "
-            "start_date_of_work TEXT, "
-            "password TEXT, "
-            "avatar TEXT, "
-            "is_enabled BOOLEAN NOT NULL DEFAULT 1, "
-            "FOREIGN KEY(department) REFERENCES department(name)"
-            ");");
-    }
-    qDebug() << "Kết nối đến cơ sở dữ liệu thành công";
-    return true;
-}
 
-bool DataHandler::connectToSQLiteDatabase(const QString& databasePath) {
-    QFile databaseFile(databasePath);
-    bool isDatabaseExist = databaseFile.exists();
-
-    // Thêm cơ sở dữ liệu
+    // Tiến hành kết nối cơ sở dữ liệu
     QSqlDatabase sqlDatabase = QSqlDatabase::addDatabase("QSQLITE");
     sqlDatabase.setDatabaseName(databasePath);
 
@@ -53,13 +24,15 @@ bool DataHandler::connectToSQLiteDatabase(const QString& databasePath) {
         return false;
     }
 
-    // Kiểm tra xem cơ sở dữ liệu có tồn tại và không trống
-    if (!isDatabaseExist || isDatabaseEmpty(databasePath)) {
-        qDebug() << "Cơ sở dữ liệu không tồn tại hoặc trống. Tạo bảng mới...";
+    // Kiểm tra sự tồn tại của các bảng và tạo mới nếu cần
+    if (!areTablesExist()) {
+        qDebug() << "Thiếu bảng cần thiết. Đang tạo các bảng...";
+
         runCreateQuery("CREATE TABLE IF NOT EXISTS department ("
             "name TEXT, "
             "description TEXT"
             ");");
+
         runCreateQuery("CREATE TABLE IF NOT EXISTS employee ("
             "id TEXT PRIMARY KEY, "
             "first_name TEXT, "
@@ -77,63 +50,80 @@ bool DataHandler::connectToSQLiteDatabase(const QString& databasePath) {
             "FOREIGN KEY(department) REFERENCES department(name)"
             ");");
     }
-    else {
-        // Kiểm tra xem bảng có tồn tại không
-        if (!areTablesExist()) {
-            qDebug() << "Các bảng không tồn tại. Tạo bảng mới...";
-            runCreateQuery("CREATE TABLE IF NOT EXISTS department ("
-                "name TEXT, "
-                "description TEXT"
-                ");");
-            runCreateQuery("CREATE TABLE IF NOT EXISTS employee ("
-                "id TEXT PRIMARY KEY, "
-                "first_name TEXT, "
-                "last_name TEXT, "
-                "date_of_birth TEXT, "
-                "email TEXT UNIQUE, "
-                "phone_number TEXT, "
-                "address TEXT, "
-                "department TEXT, "
-                "role TEXT, "
-                "start_date_of_work TEXT, "
-                "password TEXT, "
-                "avatar TEXT, "
-                "is_enabled BOOLEAN NOT NULL DEFAULT 1, "
-                "FOREIGN KEY(department) REFERENCES department(name)"
-                ");");
-        }
-    }
 
     qDebug() << "Kết nối đến cơ sở dữ liệu thành công";
     return true;
 }
 
-// Kiểm tra xem tệp cơ sở dữ liệu có trống không
+bool DataHandler::connectToMySQLDatabase() {
+    QSettings settings("Iritech", "IriTracker_Standard");
+
+    QString host = settings.value("host").toString();
+    QString databaseName = settings.value("databaseName").toString();
+    QString user = settings.value("username").toString();
+    QString password = settings.value("password").toString();
+    int port = settings.value("port").toInt();
+
+    QSqlDatabase sqlDatabase = QSqlDatabase::addDatabase("QMYSQL");
+    sqlDatabase.setHostName(host);
+    sqlDatabase.setDatabaseName(databaseName);
+    sqlDatabase.setUserName(user);
+    sqlDatabase.setPassword(password);
+    sqlDatabase.setPort(port);
+
+    if (!sqlDatabase.open()) {
+        qDebug() << "Lỗi khi kết nối đến cơ sở dữ liệu MySQL:" << sqlDatabase.lastError().text();
+        return false;
+    }
+
+    if (!areTablesExist()) {
+        qDebug() << "Thiếu bảng cần thiết. Đang tạo các bảng...";
+
+        runCreateQuery("CREATE TABLE IF NOT EXISTS department ("
+            "name VARCHAR(255), "
+            "description TEXT"
+            ");");
+
+        runCreateQuery("CREATE TABLE IF NOT EXISTS employee ("
+            "id VARCHAR(255) PRIMARY KEY, "
+            "first_name VARCHAR(255), "
+            "last_name VARCHAR(255), "
+            "date_of_birth DATE, "
+            "email VARCHAR(255) UNIQUE, "
+            "phone_number VARCHAR(50), "
+            "address TEXT, "
+            "department VARCHAR(255), "
+            "role VARCHAR(50), "
+            "start_date_of_work DATE, "
+            "password VARCHAR(255), "
+            "avatar TEXT, "
+            "is_enabled BOOLEAN NOT NULL DEFAULT 1, "
+            "FOREIGN KEY(department) REFERENCES department(name)"
+            ");");
+    }
+
+    qDebug() << "Kết nối đến cơ sở dữ liệu MySQL thành công";
+    return true;
+}
+
 bool DataHandler::isDatabaseEmpty(const QString& databasePath) {
     QFile databaseFile(databasePath);
     if (!databaseFile.open(QIODevice::ReadOnly)) {
         qDebug() << "Không thể mở cơ sở dữ liệu để kiểm tra tính trống:" << databaseFile.errorString();
-        return true; // Xem như trống nếu không thể mở
+        return true;
     }
 
-    // Đọc dữ liệu từ tệp và kiểm tra kích thước
     return (databaseFile.size() == 0);
 }
 
 // Kiểm tra xem các bảng cần thiết có tồn tại không
 bool DataHandler::areTablesExist() {
-    QSqlQuery query;
-    query.exec("SELECT name FROM sqlite_master WHERE type='table' AND name IN ('department', 'employee');");
-
-    int count = 0;
-    while (query.next()) {
-        count++;
-    }
-
-    return (count == 2); // Nếu có cả hai bảng
+    QSqlDatabase sqlDatabase = QSqlDatabase::database();
+    QStringList tables = sqlDatabase.tables();
+    return tables.contains("department") && tables.contains("employee");
 }
 
-void DataHandler::disconnectToDatabase() {
+void DataHandler::disconnectToSQLiteDatabase() {
     if (database.isOpen()) {
         database.close();
         qDebug() << "Đã đóng cơ sở dữ liệu";
@@ -202,5 +192,5 @@ QSqlQuery DataHandler::runCommonQuery(const QString& sqlQuery) {
 }
 
 DataHandler::~DataHandler() {
-    disconnectToDatabase();
+    disconnectToSQLiteDatabase();
 }

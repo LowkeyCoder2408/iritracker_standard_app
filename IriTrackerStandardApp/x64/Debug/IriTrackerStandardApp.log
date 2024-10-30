@@ -1,3 +1,4 @@
 ﻿   Qt/MSBuild: 3.3.0.13
    Qt: 5.15.2
+  DatabaseSetting.cpp
   IriTrackerStandardApp.vcxproj -> D:\QT-project\IriTrackerStandardApp\x64\Debug\IriTrackerStandardApp.exe

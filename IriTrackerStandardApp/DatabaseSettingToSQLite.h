@@ -11,6 +11,7 @@ class DatabaseSettingToSQLite : public QWidget {
 public:
 	DatabaseSettingToSQLite(QWidget* parent = nullptr);
 	void browseDatabaseFile();
+	QString getDatabasePath();
 	~DatabaseSettingToSQLite();
 
 signals:
