@@ -8,7 +8,7 @@
 DatabaseSetting::DatabaseSetting(QWidget* parent) : QMainWindow(parent),
 selectedDatabaseType(0),
 databaseSettingToSQLite(),
-databaseSettingToSQLite2() {
+databaseSettingToMySQL() {
     ui.setupUi(this);
     ui.label->setWordWrap(true);
     ui.databaseTypeComboBox->addItem("SQLite", 0);
@@ -48,13 +48,15 @@ void DatabaseSetting::hideSQLite() {
 
 void DatabaseSetting::showMySQL() {
     hideSQLite();
-    ui.connectionDetail->layout()->addWidget(&databaseSettingToSQLite2);
-    databaseSettingToSQLite2.show();
+    ui.groupBox->setFixedHeight(245);
+    ui.connectionDetail->setFixedHeight(245);
+    ui.connectionDetail->layout()->addWidget(&databaseSettingToMySQL);
+    databaseSettingToMySQL.show();
 }
 
 void DatabaseSetting::hideMySQL() {
-    ui.connectionDetail->layout()->removeWidget(&databaseSettingToSQLite2);
-    databaseSettingToSQLite2.hide();
+    ui.connectionDetail->layout()->removeWidget(&databaseSettingToMySQL);
+    databaseSettingToMySQL.hide();
 }
 
 
@@ -83,11 +85,11 @@ void DatabaseSetting::handleConnect() {
     else if (selectedDatabaseType == 1) {
         settings.setValue("databaseType", "MySQL");
 
-        QString host = ui.hostLineEdit->text();
-        QString databaseName = ui.databaseNameLineEdit->text();
-        QString user = ui.usernameLineEdit->text();
-        QString password = ui.passwordLineEdit->text();
-        QString port = ui.portLineEdit->text(); // Giả sử bạn đã thêm một trường nhập liệu cho cổng
+        QString host = databaseSettingToMySQL.getServerHostName();
+        QString databaseName = databaseSettingToMySQL.getDatabaseName();
+        QString user = databaseSettingToMySQL.getAdministratorUsername();
+        QString password = databaseSettingToMySQL.getAdministratorPassword();
+        int port = databaseSettingToMySQL.getServerPortNumber();
 
         // Ghi các thông tin kết nối MySQL vào QSettings
         settings.setValue("host", host);

@@ -101,6 +101,9 @@
     <ClCompile Include="DatabaseSettingToSQLite.cpp">
       <Filter>view\source</Filter>
     </ClCompile>
+    <ClCompile Include="DatabaseSettingToMySQL.cpp">
+      <Filter>view\source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="DataHandler.h">
@@ -140,6 +143,9 @@
       <Filter>view\header</Filter>
     </QtMoc>
     <QtMoc Include="DatabaseSettingToSQLite.h">
+      <Filter>view\header</Filter>
+    </QtMoc>
+    <QtMoc Include="DatabaseSettingToMySQL.h">
       <Filter>view\header</Filter>
     </QtMoc>
   </ItemGroup>
@@ -189,6 +195,9 @@
       <Filter>view\form</Filter>
     </QtUic>
     <QtUic Include="DatabaseSetting.ui">
+      <Filter>view\form</Filter>
+    </QtUic>
+    <QtUic Include="DatabaseSettingToMySQL.ui">
       <Filter>view\form</Filter>
     </QtUic>
   </ItemGroup>

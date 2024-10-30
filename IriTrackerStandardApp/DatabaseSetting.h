@@ -3,7 +3,7 @@
 #include "ui_DatabaseSetting.h"
 #include "DataHandler.h"
 #include "DatabaseSettingToSQLite.h"
-#include "Menu.h"
+#include "DatabaseSettingToMySQL.h"
 #include <QDialog>
 #include <QHBoxLayout>
 
@@ -26,7 +26,7 @@ private slots:
 private:
     Ui::DatabaseSettingClass ui;
     DatabaseSettingToSQLite databaseSettingToSQLite;
-    Menu databaseSettingToSQLite2;
+    DatabaseSettingToMySQL databaseSettingToMySQL;
     DataHandler dataHandler;
     int selectedDatabaseType;
 };
