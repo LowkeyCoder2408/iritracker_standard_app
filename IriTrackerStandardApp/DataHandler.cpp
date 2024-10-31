@@ -76,13 +76,15 @@ bool DataHandler::connectToMySQLDatabase() {
         return false;
     }
 
-    if (!areTablesExist()) {
-        qDebug() << "Thiếu bảng cần thiết. Đang tạo các bảng...";
+    qDebug() << "Kết nối đến cơ sở dữ liệu MySQL thành công";
 
-        runCreateQuery("CREATE TABLE IF NOT EXISTS department ("
-            "name VARCHAR(255), "
-            "description TEXT"
-            ");");
+    runCreateQuery("CREATE TABLE IF NOT EXISTS department ("
+        "name VARCHAR(255) PRIMARY KEY, "
+        "description TEXT"
+        ");");
+
+    if (!areTablesExist()) {
+        qDebug() << "Thiếu bảng cần thiết. Đang tạo bảng employee...";
 
         runCreateQuery("CREATE TABLE IF NOT EXISTS employee ("
             "id VARCHAR(255) PRIMARY KEY, "
@@ -98,11 +100,9 @@ bool DataHandler::connectToMySQLDatabase() {
             "password VARCHAR(255), "
             "avatar TEXT, "
             "is_enabled BOOLEAN NOT NULL DEFAULT 1, "
-            "FOREIGN KEY(department) REFERENCES department(name)"
+            "FOREIGN KEY(department) REFERENCES department(name) ON DELETE CASCADE"
             ");");
     }
-
-    qDebug() << "Kết nối đến cơ sở dữ liệu MySQL thành công";
     return true;
 }
 
@@ -116,14 +116,19 @@ bool DataHandler::isDatabaseEmpty(const QString& databasePath) {
     return (databaseFile.size() == 0);
 }
 
-// Kiểm tra xem các bảng cần thiết có tồn tại không
 bool DataHandler::areTablesExist() {
     QSqlDatabase sqlDatabase = QSqlDatabase::database();
     QStringList tables = sqlDatabase.tables();
     return tables.contains("department") && tables.contains("employee");
 }
 
-void DataHandler::disconnectToSQLiteDatabase() {
+bool DataHandler::connectToDatabase() {
+    QSettings settings("Iritech", "IriTracker_Standard");
+    QString databaseType = settings.value("databaseType", "").toString();
+    return (databaseType == "SQLite") ? connectToSQLiteDatabase() : (databaseType == "MySQL") && connectToMySQLDatabase();
+}
+
+void DataHandler::disconnectToDatabase() {
     if (database.isOpen()) {
         database.close();
         qDebug() << "Đã đóng cơ sở dữ liệu";
@@ -192,5 +197,5 @@ QSqlQuery DataHandler::runCommonQuery(const QString& sqlQuery) {
 }
 
 DataHandler::~DataHandler() {
-    disconnectToSQLiteDatabase();
+    disconnectToDatabase();
 }

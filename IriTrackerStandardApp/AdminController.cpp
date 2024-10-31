@@ -4,7 +4,7 @@ AdminController::AdminController(QObject* parent)
     : QObject(parent) {}
 
 bool AdminController::registerAdmin(const QString& email, const QString& password, QString& errorMessage) {
-    dataHandler.connectToSQLiteDatabase();
+    dataHandler.connectToDatabase();
 
     QString insertQuery = "INSERT INTO employee (id, first_name, last_name, password, department, date_of_birth, start_date_of_work, is_enabled, avatar, role, email, phone_number, address) "
         "VALUES (:id, :first_name, :last_name, :password, :department, :date_of_birth, :start_date_of_work, :is_enabled, :avatar, :role, :email, :phone_number, :address);";
@@ -18,13 +18,13 @@ bool AdminController::registerAdmin(const QString& email, const QString& passwor
 
     if (!dataHandler.runCreateQuery(insertQuery, params)) {
         errorMessage = "Đăng ký quản trị viên không thành công";
-        dataHandler.disconnectToSQLiteDatabase();
+        dataHandler.disconnectToDatabase();
         return false;
     }
 
     QSettings settings("Iritech", "IriTracker_Standard");
     settings.setValue("isLoggedIn", true);
-    dataHandler.disconnectToSQLiteDatabase();
+    dataHandler.disconnectToDatabase();
     return true;
 }
 

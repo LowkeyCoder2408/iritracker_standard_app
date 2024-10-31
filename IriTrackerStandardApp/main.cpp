@@ -6,17 +6,8 @@
 #include <QtWidgets/QApplication>
 
 int main(int argc, char* argv[]) {
-
-    QSettings settings("Iritech", "IriTracker_Standard");
-
-    // Lấy tất cả các khóa đã lưu
-    QStringList keys = settings.allKeys();
-
-    qDebug() << "Danh sách các setting đã lưu:";
-    for (const QString& key : keys) {
-        QVariant value = settings.value(key);
-        qDebug() << key << "=" << value.toString();
-    }
+    //QSettings settings("Iritech", "IriTracker_Standard");
+    //settings.setValue("databaseType", "");
 
     QApplication a(argc, argv);
     AdminSignUpForm adminSignUpForm;
@@ -24,7 +15,7 @@ int main(int argc, char* argv[]) {
     DataHandler dataHandler;
     DatabaseSetting databaseSetting;
 
-    if (!dataHandler.connectToSQLiteDatabase()) {
+    if (!dataHandler.connectToDatabase()) {
         databaseSetting.show();
     }
     else {

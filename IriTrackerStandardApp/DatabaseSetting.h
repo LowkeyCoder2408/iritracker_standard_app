@@ -6,6 +6,7 @@
 #include "DatabaseSettingToMySQL.h"
 #include <QDialog>
 #include <QHBoxLayout>
+#include <QMessageBox>
 
 class DatabaseSetting : public QMainWindow {
     Q_OBJECT
@@ -28,5 +29,6 @@ private:
     DatabaseSettingToSQLite databaseSettingToSQLite;
     DatabaseSettingToMySQL databaseSettingToMySQL;
     DataHandler dataHandler;
+    QMessageBox messageBox;
     int selectedDatabaseType;
 };

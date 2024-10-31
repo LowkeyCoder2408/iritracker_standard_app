@@ -1,7 +1,7 @@
 #include "DepartmentController.h"
 
 DepartmentController::DepartmentController() {
-    dataHandler.connectToSQLiteDatabase();
+    dataHandler.connectToDatabase();
 }
 
 bool DepartmentController::isDepartmentNameInvalid(const QString& name) {

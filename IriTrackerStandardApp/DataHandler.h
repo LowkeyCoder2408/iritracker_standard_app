@@ -19,7 +19,8 @@ public:
     bool connectToMySQLDatabase();
     bool isDatabaseEmpty(const QString& databasePath);
     bool areTablesExist();
-    void disconnectToSQLiteDatabase();
+    bool connectToDatabase();
+    void disconnectToDatabase();
     bool checkUserCredentials(QString password);
     bool hasAdminAccount();
     bool runCreateQuery(const QString& sqlQuery);

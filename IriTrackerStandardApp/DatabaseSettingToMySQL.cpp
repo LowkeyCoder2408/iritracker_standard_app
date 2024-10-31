@@ -2,6 +2,7 @@
 
 DatabaseSettingToMySQL::DatabaseSettingToMySQL(QWidget* parent) : QWidget(parent) {
     ui.setupUi(this);
+    ui.administratorPasswordInput->setEchoMode(QLineEdit::Password);
     //connect(ui.browseButton, &QPushButton::clicked, this, &DatabaseSettingToMySQL::browseDatabaseFile);
 }
 
