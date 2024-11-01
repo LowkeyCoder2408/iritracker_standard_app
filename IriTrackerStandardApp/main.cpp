@@ -6,6 +6,7 @@
 #include <QtWidgets/QApplication>
 
 int main(int argc, char* argv[]) {
+    //Nếu muốn đổi nền tảng CSDL thì bỏ comment 2 dòng này
     //QSettings settings("Iritech", "IriTracker_Standard");
     //settings.setValue("databaseType", "");
 
